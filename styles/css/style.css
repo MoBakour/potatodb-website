@@ -1,0 +1,463 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Quicksand", "Almarai";
+  color: white;
+}
+
+pre {
+  margin: 1em 0;
+}
+
+pre,
+code {
+  font-family: monospace;
+}
+pre span,
+code span {
+  font-family: monospace;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #202020;
+  min-height: 100vh;
+}
+
+html.home,
+html.home body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  --scrollbar-size: 10px;
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d9a53f;
+  border-radius: 5px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+header nav ul li {
+  list-style: none;
+  font-size: 20px;
+  margin: 20px;
+}
+header nav ul li a {
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+header nav ul li a:hover {
+  opacity: 0.6;
+}
+header nav ul li a.current {
+  color: #d9a53f;
+  pointer-events: none;
+}
+header .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 12.5px;
+  left: 10px;
+}
+header .brand img {
+  height: 40px;
+  margin-right: 6px;
+}
+header .brand h1 {
+  font-size: 24px;
+  white-space: nowrap;
+}
+header .brand h1 span {
+  color: #d9a53f;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 60px;
+  padding: 20px 100px;
+}
+footer .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+footer .brand img {
+  width: 60px;
+  margin-right: 7px;
+}
+footer .brand h1 {
+  font-size: 45px;
+}
+footer .credits h3 a {
+  text-decoration: none;
+  color: #d9a53f;
+  transition: all 0.3s ease;
+}
+footer .credits h3 a:hover {
+  opacity: 0.8;
+}
+footer .credits .contact-icons {
+  margin-top: 10px;
+}
+footer .credits .contact-icons a {
+  display: block;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+footer .credits .contact-icons a i {
+  min-width: 20px;
+  min-height: 20px;
+  text-align: center;
+}
+footer .credits .contact-icons a:hover {
+  opacity: 0.8;
+}
+footer.docs-footer {
+  justify-content: space-evenly;
+  width: calc(74% - 200px);
+  float: right;
+}
+
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 56px;
+  color: #d9a53f;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.active {
+  opacity: 0.6;
+  pointer-events: auto;
+}
+.scroll-up-btn.active:hover {
+  transform: scale(1.2);
+}
+
+.home .landing-face .brand {
+  padding: 100px 30px 40px 30px;
+  text-align: center;
+}
+.home .landing-face .brand .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.home .landing-face .brand .logo img {
+  width: 100px;
+  margin-right: 20px;
+}
+.home .landing-face .brand .logo h1 {
+  font-size: 80px;
+}
+.home .landing-face .brand .description {
+  padding: 20px 0;
+  font-size: 20px;
+}
+.home .landing-face .npm-command .command {
+  width: fit-content;
+  margin: auto;
+  padding: 16px;
+  background-color: #d9a53f;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: monospace !important;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.home .landing-face .npm-command .command i {
+  color: black;
+}
+.home .landing-face .npm-command .command:hover {
+  opacity: 0.8;
+}
+.home .landing-face .npm-command .tooltip {
+  width: fit-content;
+  margin: auto;
+  margin-top: 10px;
+  padding: 6px 10px;
+  background-color: rgb(5, 186, 101);
+  font-size: 18px;
+  border-radius: 8px;
+  position: relative;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.home .landing-face .npm-command .tooltip .angle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(5, 186, 101);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.home .landing-face .npm-command .tooltip.active {
+  opacity: 1;
+}
+.home .landing-face .blobs .blob {
+  position: absolute;
+  width: 25%;
+  filter: blur(60px);
+  opacity: 0.4;
+}
+.home .landing-face .blobs .blob-one {
+  left: 0;
+  top: 0;
+  transform: translate(-30%, -20%);
+}
+.home .landing-face .blobs .blob-two {
+  right: 0;
+  bottom: 0;
+  transform: translate(30%, 20%);
+}
+.home .section {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+}
+.home .section-title {
+  font-size: 40px;
+}
+.home .section-content {
+  padding: 20px;
+  font-size: 20px;
+}
+.home .section-content a {
+  color: #d9a53f;
+  transition: all 0.3s ease;
+}
+.home .section-content a i {
+  color: #d9a53f;
+}
+.home .section-content a:hover {
+  opacity: 0.8;
+}
+
+.docs body {
+  overflow-x: visible;
+}
+.docs main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  --header-height: 65px;
+  --content-width: 74%;
+}
+.docs main .docs-menu {
+  height: calc(100vh - var(--header-height) - 28px);
+  width: calc(26% - 28px);
+  background-color: #161616;
+  padding: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+.docs main .docs-menu a {
+  display: block;
+  text-decoration: none;
+  padding: 6px;
+  margin: 3px;
+  transition: all 0.3s ease;
+}
+.docs main .docs-menu a.category {
+  font-size: 30px;
+}
+.docs main .docs-menu a.topic {
+  font-size: 20px;
+  padding-left: 20px;
+}
+.docs main .docs-menu a:hover {
+  background-color: #131313;
+}
+.docs main .docs-content {
+  width: calc(var(--content-width) - 100px);
+  padding: 50px;
+}
+.docs main .docs-content h2 {
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+.docs main .docs-content h2:first-of-type {
+  margin-top: 0;
+}
+.docs main .docs-content h2:nth-of-type(2) {
+  margin-bottom: -20px;
+}
+.docs main .docs-content h4 {
+  margin-top: 40px;
+}
+.docs main .docs-content p {
+  margin: 10px 0;
+}
+.docs main .docs-content table,
+.docs main .docs-content th,
+.docs main .docs-content td {
+  border: 1.5px solid white;
+  border-collapse: collapse;
+}
+.docs main .docs-content th,
+.docs main .docs-content td {
+  padding: 10px;
+}
+.docs main .docs-content .table-title {
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+@media (max-width: 970px) {
+  html:not(.home) header {
+    padding-top: 60px;
+  }
+  html:not(.home) header .brand {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .docs main {
+    --header-height: 125px;
+    --content-width: 100%;
+    justify-content: center;
+  }
+  .docs main .docs-menu {
+    display: none;
+  }
+  footer.docs-footer {
+    justify-content: space-between;
+    width: unset;
+    float: unset;
+  }
+}
+@media (max-width: 670px) {
+  ::-webkit-scrollbar {
+    --scrollbar-size: 5px;
+  }
+  .home .landing-face .brand {
+    padding: 80px 30px 40px 30px;
+  }
+  .home .landing-face .brand .logo img {
+    width: 80px;
+    margin-right: 16px;
+  }
+  .home .landing-face .brand .logo h1 {
+    font-size: 64px;
+  }
+  .home .landing-face .brand .description {
+    padding: 16px 0;
+    font-size: 16px;
+  }
+  .home .landing-face .npm-command .command {
+    padding: 13px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .home .landing-face .npm-command .tooltip {
+    margin-top: 8px;
+    padding: 5px 8px;
+    font-size: 15px;
+    border-radius: 7px;
+  }
+  .home .landing-face .npm-command .tooltip .angle {
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+  }
+  .home .section {
+    width: 80%;
+    padding: 16px;
+  }
+  .home .section-title {
+    font-size: 32px;
+  }
+  .home .section-content {
+    padding: 16px;
+    font-size: 16px;
+  }
+  header nav ul li {
+    font-size: 16px;
+    margin: 16px;
+  }
+  header nav ul li a {
+    padding: 8px 10px;
+  }
+  footer {
+    flex-direction: column;
+    padding: 16px 80px;
+  }
+}
+@media (max-width: 470px) {
+  .home .landing-face .brand .logo img {
+    width: 50px;
+    margin-right: 8px;
+  }
+  .home .landing-face .brand .logo h1 {
+    font-size: 40px;
+  }
+  .home .section {
+    width: 90%;
+  }
+  .docs main .docs-content {
+    width: calc(100% - 40px);
+    font-size: 90%;
+    padding: 20px;
+  }
+  header nav ul li {
+    font-size: 14px;
+    margin: 14px;
+  }
+  header nav ul li a {
+    padding: 6px 8px;
+  }
+}
+@media (max-width: 370px) {
+  header nav ul li {
+    margin: 14px 8px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
