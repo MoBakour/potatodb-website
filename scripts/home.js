@@ -1,5 +1,5 @@
 // NPM Command Copy
-const npm = document.querySelector(".npm-command");
+const npm = document.querySelector(".npm-command .command");
 const npmTooltip = document.querySelector(".npm-command .tooltip");
 let copyNpmLock = false;
 npm.addEventListener("click", () => {

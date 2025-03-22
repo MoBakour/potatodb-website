@@ -170,6 +170,14 @@ footer.docs-footer {
   transform: scale(1.2);
 }
 
+.home body {
+  position: relative;
+  overflow: hidden;
+}
+.home .landing-face {
+  width: 100%;
+  overflow: hidden;
+}
 .home .landing-face .brand {
   padding: 100px 30px 40px 30px;
   text-align: center;
@@ -242,6 +250,7 @@ footer.docs-footer {
   width: 25%;
   filter: blur(60px);
   opacity: 0.4;
+  pointer-events: none;
 }
 .home .landing-face .blobs .blob-one {
   left: 0;
@@ -331,9 +340,17 @@ footer.docs-footer {
 }
 .docs main .docs-content h4 {
   margin-top: 40px;
+  margin-bottom: 10px;
+}
+.docs main .docs-content h5 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .docs main .docs-content p {
   margin: 10px 0;
+}
+.docs main .docs-content table {
+  font-size: 90%;
 }
 .docs main .docs-content table,
 .docs main .docs-content th,
@@ -351,6 +368,9 @@ footer.docs-footer {
 }
 
 @media (max-width: 970px) {
+  ::-webkit-scrollbar {
+    --scrollbar-size: 5px;
+  }
   html:not(.home) header {
     padding-top: 60px;
   }
@@ -374,9 +394,6 @@ footer.docs-footer {
   }
 }
 @media (max-width: 670px) {
-  ::-webkit-scrollbar {
-    --scrollbar-size: 5px;
-  }
   .home .landing-face .brand {
     padding: 80px 30px 40px 30px;
   }
@@ -430,6 +447,11 @@ footer.docs-footer {
     padding: 16px 80px;
   }
 }
+@media (max-width: 570px) {
+  .docs main .docs-content table {
+    font-size: 80%;
+  }
+}
 @media (max-width: 470px) {
   .home .landing-face .brand .logo img {
     width: 50px;
@@ -454,9 +476,17 @@ footer.docs-footer {
     padding: 6px 8px;
   }
 }
+@media (max-width: 420px) {
+  .docs main .docs-content table {
+    font-size: 70%;
+  }
+}
 @media (max-width: 370px) {
   header nav ul li {
     margin: 14px 8px;
+  }
+  .docs main .docs-content table {
+    font-size: 60%;
   }
 }
 

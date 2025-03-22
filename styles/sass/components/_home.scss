@@ -1,7 +1,15 @@
 @use "../assets/" as *;
 
 .home {
+    body {
+        position: relative;
+        overflow: hidden;
+    }
+
     .landing-face {
+        width: 100%;
+        overflow: hidden;
+
         .brand {
             padding: 100px 30px 40px 30px;
             text-align: center;
@@ -90,6 +98,7 @@
                 width: 25%;
                 filter: blur(60px);
                 opacity: 0.4;
+                pointer-events: none;
 
                 &-one {
                     left: 0;

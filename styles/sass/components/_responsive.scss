@@ -1,6 +1,10 @@
 @use "../assets/" as *;
 
 @media (max-width: 970px) {
+    ::-webkit-scrollbar {
+        --scrollbar-size: 5px;
+    }
+
     html:not(.home) {
         header {
             padding-top: 60px;
@@ -32,10 +36,6 @@
 }
 
 @media (max-width: 670px) {
-    ::-webkit-scrollbar {
-        --scrollbar-size: 5px;
-    }
-
     .home {
         .landing-face {
             .brand {
@@ -115,6 +115,12 @@
     }
 }
 
+@media (max-width: 570px) {
+    .docs main .docs-content table {
+        font-size: 80%;
+    }
+}
+
 @media (max-width: 470px) {
     .home {
         .landing-face {
@@ -159,8 +165,18 @@
     }
 }
 
+@media (max-width: 420px) {
+    .docs main .docs-content table {
+        font-size: 70%;
+    }
+}
+
 @media (max-width: 370px) {
     header nav ul li {
         margin: 14px 8px;
+    }
+
+    .docs main .docs-content table {
+        font-size: 60%;
     }
 }
